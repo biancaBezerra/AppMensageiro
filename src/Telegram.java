@@ -1,15 +1,15 @@
-public class MSNMessenger {
+public class Telegram {
     public void enviarMensagem(){
         //primeiro conformar se esta conectado
         validarConectadoInternet();
 
-        System.out.println("Enviando mensagem pelo MSN");
+        System.out.println("Enviando mensagem pelo Telegram");
 
         //depois de enviada salvar o historico
         salvarHistoricoMensagem();
     }
     public void receberMensagem(){
-        System.out.println("Recebendo mensagem pelo MSN");
+        System.out.println("Recebendo mensagem pelo Telegram");
     }
 
     //metodos privados, visiveis somente na classe
