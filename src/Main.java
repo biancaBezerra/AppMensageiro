@@ -1,18 +1,35 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("----------- ABRINDO MSN -----------");
-        MSNMessenger msn = new MSNMessenger();
-        msn.enviarMensagem();
-        msn.receberMensagem();
 
-        System.out.println("----------- ABRINDO FACEBOOK -----------");
-        FacebookMessenger facebook = new FacebookMessenger();
-        facebook.enviarMensagem();
-        facebook.receberMensagem();
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("----------- ABRINDO TELEGRAM -----------");
-        Telegram telegram = new Telegram();
-        telegram.enviarMensagem();
-        telegram.receberMensagem();
+        ServicoMensagemInstantanea smi = null;
+
+        /*
+        NAO SE SABE QUAL APP
+        MAS QUALQUER UM DEVERA ENVIAR E RECEBER MENSAGENS
+         */
+
+        System.out.print("Digite a opção (numero) do app que deseja utilizar: \n" +
+                "1 - MSN\n" +
+                "2 - FACEBOOK\n" +
+                "3 - TELEGRAM\n");
+        String appEscolhido = scanner.nextLine();
+
+        System.out.println("Você escolheu a opcao " + appEscolhido);
+
+        if (appEscolhido.equals("1"))
+            smi = new MSNMessenger();
+        else if (appEscolhido.equals("2"))
+            smi = new FacebookMessenger();
+        else if (appEscolhido.equals("3"))
+            smi = new Telegram();
+        else System.out.println("Opção inválida, encerrando...");
+
+
+        smi.enviarMensagem();
+        smi.receberMensagem();
     }
 }
