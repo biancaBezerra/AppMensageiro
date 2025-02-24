@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        MSNMessenger msn = new MSNMessenger();
+
+        msn.validarConectadoInternet();
+        msn.enviarMensagem();
+        msn.salvarHistoricoMensagem();
+
+        msn.receberMensagem();
     }
 }
