@@ -1,4 +1,8 @@
-public class ServicoMensagemInstantanea {
+public abstract class ServicoMensagemInstantanea {
+
+    public abstract void enviarMensagem();
+    public abstract void receberMensagem();
+
     public void enviarMensagem(){
         //primeiro conformar se esta conectado
         validarConectadoInternet();
